@@ -11,6 +11,7 @@ function Button(props) {
 	if (props.className) classNames += " " + props.className;
 	return (
 		<button
+			disabled={!!props.disabled}
 			onClick={props.onClick}
 			className={"cui btn" + btncolor + btntype + btnsize + classNames}
 		>

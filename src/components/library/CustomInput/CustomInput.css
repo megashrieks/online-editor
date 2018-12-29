@@ -9,7 +9,8 @@
 	border: 1px solid var(--border-color);
 	transition: 0.3s;
 	border-radius: 3px;
-	margin: 15px 0;
+	margin: 25px 0;
+	text-align: left;
 }
 .custom-input.error {
 	--shadow-color: var(--error-shadow);
@@ -24,14 +25,18 @@
 	height: 45px;
 	line-height: 45px;
 	padding-left: 10px;
-	color: #666;
+	color: #999;
+	font-weight: lighter;
 	box-sizing: border-box;
 	top: 0;
 	left: 0;
-	transition: 0.3s;
+	transition: 0.2s;
 	cursor: text;
 	border-left: 1px solid #fff;
 	border-right: 1px solid #fff;
+}
+.custom-input .label::selection {
+	background: transparent;
 }
 .custom-input input {
 	border: none;
@@ -60,9 +65,12 @@
 .custom-input.error {
 	--border-color: var(--error);
 }
-.custom-input.error .label {
+.custom-input.error input:focus + .label,
+.custom-input.error input:not([value=""]) + .label {
 	border-left: 1px solid var(--error);
 	border-right: 1px solid var(--error);
+}
+.custom-input.error .label {
 	color: var(--error);
 }
 .custom-input .error-message {

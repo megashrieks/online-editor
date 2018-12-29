@@ -1,7 +1,18 @@
 import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { SessionProvider } from "../context/SessionContext";
+import Login from "../Login/Login";
+import Dashboard from "../Dashboard/Dashboard";
 export default class Main extends Component {
 	render() {
-		return <SessionProvider />;
+		return (
+			<SessionProvider>
+				<Switch>
+					<Route path="/login" component={Login} />
+					<ProtectedRoute path="/dashboard" component={Dashboard} />
+				</Switch>
+			</SessionProvider>
+		);
 	}
 }

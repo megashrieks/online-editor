@@ -10,3 +10,7 @@
 .padded-container.vertical {
 	padding: 10px 0;
 }
+a:focus {
+	text-decoration: none;
+	outline: none;
+}
