@@ -1,3 +1,5 @@
 module.exports = {
-	create: require("./create")
+	create: require("./create"),
+	tokenCheckMiddleWare: require("./tokenCheckMiddleWare"),
+	decode: require("./decode")
 };
