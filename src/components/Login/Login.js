@@ -63,7 +63,7 @@ export default class Login extends Component {
 	render() {
 		return (
 			<div className="centered">
-				<div className="header">Login</div>
+				<div className="header">Sign In</div>
 				<form onSubmit={this.submit}>
 					<CustomInput
 						label="username"
@@ -84,6 +84,17 @@ export default class Login extends Component {
 						triggerOnChange={true}
 						watcher={this.changeWatcher("password")}
 					/>
+					<div style={{ textAlign: "right" }}>
+						<Button
+							disabled={this.state.loading}
+							size="small"
+							type="submit"
+							color="info"
+							onClick={this.submit}
+						>
+							Sign in
+						</Button>
+					</div>
 					<div
 						style={{
 							fontSize: "0.9em",
@@ -92,25 +103,14 @@ export default class Login extends Component {
 						}}
 					>
 						Don't have an account ?{" "}
-						<Link to="/register" tabIndex="-1">
-							<Button
-								className="no-margin"
-								size="smaller"
-								color="info"
-								variant="flat"
-							>
-								Sign up
-							</Button>
-						</Link>
-					</div>
-					<div style={{ textAlign: "right" }}>
 						<Button
-							disabled={this.state.loading}
-							size="small"
+							className="no-margin"
+							size="smaller"
 							color="info"
-							onClick={this.submit}
+							variant="flat"
+							onClick={() => this.props.history.push("/register")}
 						>
-							Sign in
+							Sign up
 						</Button>
 					</div>
 				</form>

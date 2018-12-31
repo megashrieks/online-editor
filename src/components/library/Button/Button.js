@@ -9,10 +9,14 @@ function Button(props) {
 	if (props.variant) btntype = " btn-" + props.variant;
 	if (props.size) btnsize = " btn-" + props.size;
 	if (props.className) classNames += " " + props.className;
+	var fakeProps = { ...props };
+	delete fakeProps["color"];
+	delete fakeProps["variant"];
+	delete fakeProps["size"];
+	delete fakeProps["className"];
 	return (
 		<button
-			disabled={!!props.disabled}
-			onClick={props.onClick}
+			{...fakeProps}
 			className={"cui btn" + btncolor + btntype + btnsize + classNames}
 		>
 			{props.children}
