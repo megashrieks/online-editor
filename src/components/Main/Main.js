@@ -10,7 +10,7 @@ export default class Main extends Component {
 			<SessionProvider>
 				<Switch>
 					<Route path="/login" component={Login} />
-					<ProtectedRoute path="/dashboard" component={Dashboard} />
+					<ProtectedRoute path="/" component={Dashboard} />
 				</Switch>
 			</SessionProvider>
 		);

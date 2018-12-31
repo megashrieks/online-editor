@@ -1,5 +1,5 @@
 import React, { createContext, Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 import axios from "axios";
 var Context = createContext();
 class SessionProvider extends Component {
@@ -22,6 +22,10 @@ class SessionProvider extends Component {
 		axios.interceptors.request.use(config => {
 			config.headers.AUTH = this.state.token;
 			return config;
+		});
+		axios.interceptors.response.use(response => {
+			if (response.error === 2) console.log("/login");
+			return response;
 		});
 	}
 	setToken = token => {
@@ -71,4 +75,5 @@ class SessionProvider extends Component {
 		);
 	}
 }
+SessionProvider = withRouter(SessionProvider);
 export { SessionProvider, Context };
