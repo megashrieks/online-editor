@@ -6,7 +6,9 @@
 	border-right: 1px solid #eee;
 	/* box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1); */
 }
-.sidebar li {
+.sidebar .list-item {
+	text-decoration: none;
+	display: list-item;
 	width: 100%;
 	line-height: 50px;
 	height: 50px;
@@ -16,11 +18,11 @@
 	cursor: pointer;
 	transition: 0.3s;
 }
-.sidebar li i {
+.sidebar .list-item i {
 	line-height: 50px;
 	font-size: 1.2em;
 }
-.sidebar li:hover {
+.sidebar .list-item:hover {
 	background: #eee;
 	/* color: white; */
 }
